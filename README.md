@@ -9,8 +9,7 @@ GPT-2 and GPT-3 use byte pair encoding to turn text into a series of integers to
 Compatible with Deno
 
 ```js
-// to run the example below, run the following command
-// deno run -allow-read -allow-write example.ts
+// to run below example, do `deno run --allow-read --allow-write example.ts`
 import {encode, decode} from './encoder.ts'
 
 const str = 'This is an example sentence to try encoding out on!'
