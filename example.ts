@@ -1,7 +1,7 @@
 // to run this example, do `deno run --allow-read --allow-write example.ts`
 
-import { decode, encode } from "./src/Encoder.ts";
-const str = "Example string to encode, biji hevall!";
+import { decode, encode } from "./src/mod.ts";
+const str = "constructor";
 // const encoded = encode(str);
 const encoded = encode(str);
 console.log("Encoded this string looks like: ", encoded);
