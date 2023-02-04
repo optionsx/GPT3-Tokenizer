@@ -12,10 +12,10 @@ npm install gpt-3-encoder
 
 ## Usage
 
-Compatible with Node >= 12
+Compatible with Node >= 18
 
 ```js
-const {encode, decode} = require('gpt-3-encoder')
+import {encode, decode} from 'gpt-3-encoder'
 
 const str = 'This is an example sentence to try encoding out on!'
 const encoded = encode(str)

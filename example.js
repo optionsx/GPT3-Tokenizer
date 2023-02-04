@@ -1,5 +1,4 @@
-const {encode, decode} = require('./encoder.js')
-
+import {encode, decode} from './encoder.ts'
 
 const str = 'This is an example sentence to try encoding out on!'
 const encoded = encode(str)
