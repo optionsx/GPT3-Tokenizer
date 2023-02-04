@@ -2,6 +2,7 @@
 
 import { decode, encode } from "./src/mod.ts";
 const str = "constructor";
+console.log();
 // const encoded = encode(str);
 const encoded = encode(str);
 console.log("Encoded this string looks like: ", encoded);

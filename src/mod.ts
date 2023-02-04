@@ -1,35 +1,18 @@
-// This file includes code which was modified from https://github.com/openai/gpt-2
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
-import * as path from "https://deno.land/std@0.57.0/path/mod.ts";
-const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
-// const encoder = JSON.parse(readFileSync(join(__dirname, "./encoder.json")));
-// do above line in deno and typescript
+const cwd = Deno.cwd();
 const encoder = JSON.parse(
-  Deno.readTextFileSync(join(__dirname, "./encoder.json")),
+  Deno.readTextFileSync(cwd + "./src/encoder.json"),
 );
-const bpe_file = readFileSync(join(__dirname, "./vocab.bpe"), "utf-8");
-
-// const range = (x: ) => {
-//   const res = Array.from(Array(y).keys()).slice(x);
-//   return res;
-// };
+const bpe_file = Deno.readTextFileSync(cwd + "./src/vocab.bpe");
 
 const range = (x: number, y: number) => {
   const res = Array.from(Array(y).keys()).slice(x);
   return res;
 };
 
-// const ord = (x: ) => {
-//   return x.charCodeAt(0);
-// };
 const ord = (x: string) => {
   return x.charCodeAt(0);
 };
 
-// const chr = (x) => {
-//   return String.fromCharCode(x);
-// };
 const chr = (x: number) => {
   return String.fromCharCode(x);
 };
@@ -39,20 +22,10 @@ const encodeStr = (str: string) => {
 };
 
 const textDecoder = new TextDecoder("utf-8");
-// const decodeStr = (arr) => {
-//   return textDecoder.decode(new Uint8Array(arr));
-// };
+
 const decodeStr = (arr: number[]) => {
   return textDecoder.decode(new Uint8Array(arr));
 };
-
-// const dictZip = (x, y) => {
-//   const result = {};
-//   x.map((_, i) => {
-//     result[x[i]] = y[i];
-//   });
-//   return result;
-// };
 
 const dictZip = (x: string[], y: number[]) => {
   const result: { [key: string]: number } = {};
@@ -109,11 +82,6 @@ Object.keys(encoder).map((x) => {
 
 const lines = bpe_file.split("\n");
 
-// const bpe_merges = lines.slice(1, lines.length - 1).map((x) => {
-//   return x.split(/(\s+)/).filter(function (e) {
-//     return e.trim().length > 0;
-//   });
-// });
 const bpe_merges: string[][] = lines.slice(1, lines.length - 1).map((x) => {
   return x.split(/(\s+)/).filter(function (e) {
     return e.trim().length > 0;
@@ -126,7 +94,6 @@ Object.keys(byte_encoder).map((x) => {
   byte_decoder[byte_encoder[x]] = x;
 });
 
-// const bpe_ranks = dictZip(bpe_merges, range(0, bpe_merges.length));
 const bpe_ranks = dictZip(bpe_merges, range(0, bpe_merges.length));
 const cache = new Map();
 
@@ -136,7 +103,6 @@ function bpe(token: string) {
   }
   ``;
 
-  // let word = token.split("");
   let word: string[] = token.split("");
 
   let pairs = get_pairs(word);
@@ -196,7 +162,6 @@ function bpe(token: string) {
     }
   }
 
-  // word = word.join(" ");
   word = word.join(" ") as any;
   cache.set(token, word);
 
