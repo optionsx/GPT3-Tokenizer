@@ -203,7 +203,7 @@ function bpe(token: string) {
   return word;
 }
 
-export function encode(text: string) {
+export function encode(text: string): number[] {
   let bpe_tokens: number[] = [];
   const matches = Array.from(text.matchAll(pat)).map((x) => x[0]);
   for (let token of matches) {
@@ -217,7 +217,7 @@ export function encode(text: string) {
   return bpe_tokens;
 }
 
-export function decode(tokens = []): string {
+export function decode(tokens: number[]): string {
   let text = tokens.map((x) => decoder[x]).join("");
   text = decodeStr(text.split("").map((x) => byte_decoder[x])); //byte_decoder[x]
   return text as string;
