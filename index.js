@@ -1,4 +1,4 @@
-const { encode, decode } = require("./Encoder");
+const { encode, decode } = require("./Encoder.ts");
 
 module.exports = {
   encode,

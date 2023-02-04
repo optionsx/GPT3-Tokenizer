@@ -3,18 +3,11 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import * as path from "https://deno.land/std@0.57.0/path/mod.ts";
 const __dirname = path.dirname(path.fromFileUrl(import.meta.url));
-const encoderFilePath = join(
-  new URL(".", import.meta.url).pathname,
-  "./encoder.json",
+// const encoder = JSON.parse(readFileSync(join(__dirname, "./encoder.json")));
+// do above line in deno and typescript
+const encoder = JSON.parse(
+  Deno.readTextFileSync(join(__dirname, "./encoder.json")),
 );
-
-try {
-  const encoder = JSON.parse(Deno.readTextFileSync(encoderFilePath));
-} catch (error) {
-  console.error(`Error reading file at path: ${encoderFilePath}`);
-  throw error;
-}
-
 const bpe_file = readFileSync(join(__dirname, "./vocab.bpe"), "utf-8");
 
 // const range = (x: ) => {
@@ -224,10 +217,10 @@ export function encode(text: string) {
   return bpe_tokens;
 }
 
-export function decode(tokens = []) {
+export function decode(tokens = []): string {
   let text = tokens.map((x) => decoder[x]).join("");
   text = decodeStr(text.split("").map((x) => byte_decoder[x])); //byte_decoder[x]
-  return text;
+  return text as string;
 }
 export default {
   encode,

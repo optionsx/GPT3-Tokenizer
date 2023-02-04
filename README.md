@@ -1,21 +1,15 @@
-# GPT-3-Encoder
-Javascript BPE Encoder Decoder for GPT-2 / GPT-3
-
+# Deno Port of GPT-3-Encoder
+Deno(Typescript) BPE Encoder Decoder for GPT-2 / GPT-3
 ## About
 GPT-2 and GPT-3 use byte pair encoding to turn text into a series of integers to feed into the model. This is a javascript implementation of OpenAI's original python encoder/decoder which can be found [here](https://github.com/openai/gpt-2)
 
-## Install with npm
-
-```
-npm install gpt-3-encoder
-```
 
 ## Usage
 
-Compatible with Node >= 18
+Compatible with Deno
 
 ```js
-import {encode, decode} from 'gpt-3-encoder'
+import {encode, decode} from './encoder.ts'
 
 const str = 'This is an example sentence to try encoding out on!'
 const encoded = encode(str)
