@@ -24,7 +24,7 @@ for(let token of encoded){
 }
 
 const decoded = decode(encoded)
-console.log('We can decode it back into:', decoded)
+console.log('decoded:', decoded)
 
 ```
 
