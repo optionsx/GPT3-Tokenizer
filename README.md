@@ -8,7 +8,7 @@ so i ported a working nodejs(javascript) version to deno(typescript) and reforme
 
 Compatible with Deno
 ```js
-// to run below example, do `deno run --allow-read --allow-write example.ts`
+// to run below example, do `deno run --allow-read --allow-write fileName.ts`
 import {
   decode,
   encode,
