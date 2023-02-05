@@ -1,7 +1,7 @@
 # Deno Port of GPT-3-Encoder
 Deno(Typescript) BPE Encoder Decoder for GPT-2 / GPT-3
 ## About
-i had to use this in a project, all [project1](https://deno.land/x/gpt_2_3_tokenizer)[project2](https://deno.land/x/clip_bpe) ports in deno had issues,
+i had to use this in a project, all others projects([gpt_2_3_tokenizer](https://deno.land/x/gpt_2_3_tokenizer),[clip_bpe](https://deno.land/x/clip_bpe)) ports in deno had issues,
 such as "constructor" word would break the tokenizer, 
 so i ported a working nodejs(javascript) version to deno(typescript) and reformed the code abit.
 ## Usage
