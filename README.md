@@ -6,9 +6,9 @@ Deno(Typescript) BPE Encoder Decoder for GPT-2 / GPT-3
 ### so i ported a working [gpt-3-encoder](https://www.npmjs.com/package/gpt-3-encoder) module from nodejs(js) to deno(ts) and reformed the internals abit.
 ## Usage
 tested on:
-deno 1.30.2
-v8 10.9.194.5
-typescript 4.9.4
+deno 1.30.2\n
+v8 10.9.194.5\n
+typescript 4.9.4\n
 ```js
 // to run below example, do `deno run --allow-read --allow-write fileName.ts`
 import {
