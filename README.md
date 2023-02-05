@@ -3,7 +3,7 @@ BPE Encoder Decoder for GPT-2 / GPT-3
 ## About
 **i needed gpt tokenizer for a personal peroject,
 all others projects([gpt_2_3_tokenizer](https://deno.land/x/gpt_2_3_tokenizer),[clip_bpe](https://deno.land/x/clip_bpe)) had issue,<br>
-such as "constructor" word would break the tokenizer,<br>
+they would break at encoding "constructor" word,<br>
 so i ported a working [gpt-3-encoder](https://www.npmjs.com/package/gpt-3-encoder) module from nodejs(js) to deno(ts) and reformed the internals abit**
 ## Usage
 deno 1.30.2</br>
