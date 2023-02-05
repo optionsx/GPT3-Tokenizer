@@ -1,7 +1,7 @@
 import {
   decode,
   encode,
-} from "https://raw.githubusercontent.com/optionsx/GPT-3-Encoder/master/src/mod.ts";
+} from "https://raw.githubusercontent.com/optionsx/GPT3-Tokenizer/master/src/mod.ts";
 
 const str = "tokenize this, biji hevall, constructor";
 console.log();
