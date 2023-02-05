@@ -1,5 +1,5 @@
 # Deno Port of GPT-3-Encoder
-Deno(Typescript) BPE Encoder Decoder for GPT-2 / GPT-3
+BPE Encoder Decoder for GPT-2 / GPT-3
 ## About
 **i needed gpt tokenizers for a personal peroject,
 all others projects([gpt_2_3_tokenizer](https://deno.land/x/gpt_2_3_tokenizer),[clip_bpe](https://deno.land/x/clip_bpe)) ports in deno had issues,
