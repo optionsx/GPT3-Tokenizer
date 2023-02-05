@@ -6,7 +6,6 @@ all others projects([gpt_2_3_tokenizer](https://deno.land/x/gpt_2_3_tokenizer),[
  such as "constructor" word would break the tokenizer,
  so i ported a working [gpt-3-encoder](https://www.npmjs.com/package/gpt-3-encoder) module from nodejs(js) to deno(ts) and reformed the internals abit. **
 ## Usage
-tested on:</br>
 deno 1.30.2</br>
 v8 10.9.194.5</br>
 typescript 4.9.4</br>
