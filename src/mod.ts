@@ -1,12 +1,5 @@
-import {
-  dirname,
-  fromFileUrl,
-} from "https://deno.land/std@0.176.0/path/mod.ts";
-const __dirname = dirname(fromFileUrl(import.meta.url));
-const encoder = JSON.parse(
-  Deno.readTextFileSync(__dirname + "/encoder.json"),
-);
-const bpe_file = Deno.readTextFileSync(__dirname + "/vocab.bpe");
+import encoder from "./encoder.ts";
+import bpe_file from "./bpe-vocab.ts";
 const range = (x: number, y: number) => {
   const res = Array.from(Array(y).keys()).slice(x);
   return res;

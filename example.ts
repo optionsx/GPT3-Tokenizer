@@ -1,7 +1,4 @@
-import {
-  decode,
-  encode,
-} from "https://raw.githubusercontent.com/optionsx/GPT3-Tokenizer/master/src/mod.ts";
+import { decode, encode } from "https://deno.land/x/gpt@1.0/mod.ts";
 
 const tokenizeThis = "biji hevall, constructor";
 console.log();
