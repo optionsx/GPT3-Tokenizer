@@ -1,13 +1,14 @@
-import { decode, encode } from "https://deno.land/x/gpt@1.0/mod.ts";
+// `deno run --allow-read --allow-write example.ts`
+import { decode, encode } from "https://deno.land/x/gpt/mod.ts";
 
-const tokenizeThis = "biji hevall, constructor";
-console.log();
-// const encoded = encode(str);
-const encoded = encode(tokenizeThis);
-console.log("tokenized: ", encoded);
+const str = "encode: biji heval, contrusctor";
+const encoded = encode(str);
+console.log("tokenized result: ", encoded);
 
 console.log("We can look at each token and what it represents");
-for (const token of encoded) {
+for (let token of encoded) {
   console.log({ token, string: decode([token]) });
 }
-console.log("decoded:", decode(encoded));
+
+const decoded = decode(encoded);
+console.log("decoded:", decoded);
