@@ -1,5 +1,5 @@
-import encoder from "./encoder.json" assert { type: "json" };
-import bpe_file from "./bpe-vocab.json" assert { type: "json" };
+import encoder from "./encoder.ts";
+import bpe_file from "./bpe-vocab.ts";
 const range = (x: number, y: number) => {
   const res = Array.from(Array(y).keys()).slice(x);
   return res;
